@@ -30,10 +30,11 @@
 
     <div id="vanta"></div>
     <main class="animated">
-        <a href="https://tracker.gg/valorant/profile/riot/jerry%23t%20om/overview"><header>
-            <img src="./images/Jerry.jpg">
-            <h1>Jerry#To m</h1>
-        </header></a>
+        <header>
+            <img src="./images/Jerry.jpg" id="profile-img">
+            <h1 id="profile-name">Jerry#To m</h1>
+        </header>        
+        
         <ul>
             <li>
                 <a href="https://www.instagram.com/suubbbinn/">
@@ -63,6 +64,14 @@
     </main>
 
     <script>
+    document.getElementById("profile-img").addEventListener("click", function() {
+        window.open("https://tracker.gg/valorant/profile/riot/jerry%23t%20om/overview", "_blank");
+    });
+
+    document.getElementById("profile-name").addEventListener("click", function() {
+        window.open("https://tracker.gg/valorant/profile/riot/jerry%23t%20om/overview", "_blank");
+    });
+
         document.addEventListener("DOMContentLoaded", () => {
     
             const video = document.getElementById("bg-video");

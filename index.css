@@ -41,6 +41,10 @@ body, html {
   object-fit: cover; /* 화면을 꽉 채우면서 비율 유지 */
   transform: translate(-50%, -50%); /* 완전한 중앙 정렬 */
 }
+#profile-img, 
+#profile-name {
+    cursor: pointer;
+}
 
 
 /* ✅ 뮤트 버튼 스타일 */
