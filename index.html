@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>Im_Jerry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                const main = document.querySelector("main");
+                main.style.opacity = 1;
+                main.style.filter = "blur(0px)";
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+
+    <div id="video-container">
+        <video id="bg-video" autoplay loop playsinline muted>
+            <source src="./videos/background.mp4" type="video/mp4">
+            Your browser does not support video tags.
+        </video>
+        <div id="bg-button"></div>
+    </div>
+
+    <button id="mute-toggle">🔊</button>
+
+    <div id="vanta"></div>
+    <main class="animated">
+        <a href="https://tracker.gg/valorant/profile/riot/jerry%23t%20om/overview"><header>
+            <img src="./images/Jerry.jpg">
+            <h1>Jerry#To m</h1>
+        </header></a>
+        <ul>
+            <li>
+                <a href="https://www.instagram.com/suubbbinn/">
+                    <img src="./images/instagram.svg" alt="instagram" width="20">
+                    suubbbinn
+                </a>
+            </li>
+            <li>
+                <a href="https://steamcommunity.com/id/thisissubin/">
+                    <img src="./images/steam.png" alt="steam" width="20">
+                    1280x720 240hz
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/iamsubinlee">
+                    <img src="./images/github.svg" alt="GitHub" width="20">
+                    iamsubinlee
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/watch?v=upSndQCyggE">
+                    <img src="./images/youtube.svg" alt="Music" width="20">
+                    Sdot Go - Free G
+                </a>
+            </li>
+        </ul>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    
+            const video = document.getElementById("bg-video");
+            const muteToggle = document.getElementById("mute-toggle");
+            const bgButton = document.getElementById("bg-button");
+    
+            if (!video || !muteToggle || !bgButton) {
+                return;
+            }
+    
+    
+            video.muted = true;
+            muteToggle.textContent = "🔇";
+    
+            function toggleMute() {
+    
+                if (video.muted) {
+                    video.muted = false;
+                    muteToggle.textContent = "🔊";
+                } else {
+                    video.muted = true;
+                    muteToggle.textContent = "🔇";
+                }
+            }
+    
+            muteToggle.addEventListener("click", () => {
+                toggleMute();
+            });
+    
+            bgButton.addEventListener("click", () => {
+                toggleMute();
+            });
+    
+            document.body.addEventListener("click", function firstClick() {
+                video.muted = false;
+                muteToggle.textContent = "🔊";
+    
+                document.body.removeEventListener("click", firstClick);
+            });
+    
+        });
+    </script>
+    
+
+</body>
+</html>
